@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Razoyo_CarProfile::management" title="Car Profile Management">
+                    <resource id="Razoyo_CarProfile::car" title="Car Management">
+                        <resource id="Razoyo_CarProfile::car_save" title="Save" translate="title"/>
+                        <resource id="Razoyo_CarProfile::car_delete" title="Delete" translate="title"/>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

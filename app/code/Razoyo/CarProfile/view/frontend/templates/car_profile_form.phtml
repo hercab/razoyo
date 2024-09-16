@@ -1,0 +1,35 @@
+<?php
+/**
+ * @var \Magento\Framework\View\Element\Template $block
+ * @var \Razoyo\CarProfile\ViewModel\CarProfile $viewModel
+ */
+$viewModel = $block->getData('viewModel');
+$config = $viewModel->getConfig($block);
+
+?>
+<div id="car-profile_container" data-bind="scope: 'carProfile'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+
+<script type="text/x-magento-init">
+    {
+        "#car-profile_container": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "carProfile": {
+                        "component": "Razoyo_CarProfile/js/view/carProfile",
+                        "template": "Razoyo_CarProfile/car_profile",
+                        "config": <?= json_encode($config); ?>,
+                        "children": {
+                                "message": {
+                                    "component": "Magento_Ui/js/view/messages",
+                                    "displayArea": "message"
+                                }
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>

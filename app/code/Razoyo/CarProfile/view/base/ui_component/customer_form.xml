@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="car_profile">
+        <settings>
+            <label translate="true">My Car Profile</label>
+        </settings>
+        <field name="id" formElement="hidden"/>
+        <field name="car_id" formElement="hidden"/>
+        <field name="make" formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Make</label>
+                <disabled>true</disabled>
+            </settings>
+        </field>
+        <field name="model" formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Model</label>
+                <disabled>true</disabled>
+            </settings>
+        </field>
+        <field name="year" formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Year</label>
+                <disabled>true</disabled>
+            </settings>
+        </field>
+        <field name="price" formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Price</label>
+                <disabled>true</disabled>
+            </settings>
+        </field>
+        <field name="seats" formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Seats</label>
+                <disabled>true</disabled>
+            </settings>
+        </field>
+        <field name="mpg" formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Npg</label>
+                <disabled>true</disabled>
+            </settings>
+        </field>
+        <field name="image" formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Image</label>
+                <disabled>true</disabled>
+            </settings>
+        </field>
+    </fieldset>
+</form>
