@@ -4,6 +4,32 @@
     gap: 25px;
 }
 
+.car-profile_container {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 25px;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: 1px solid #ccc;
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        th {
+            background: #f9f9f9;
+        }
+
+        td {
+            background: #fff;
+        }
+    }
+}
+
 .car-profile {
     display: flex;
     flex-flow: row nowrap;
@@ -11,18 +37,28 @@
     align-items: flex-start;
     justify-content: space-between;
 
+    .car_select_container {
+        .select2-container--default .select2-selection--single {
+            height: 40px;
+            border: 1px solid #ccc;
+            border-radius: 0;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 36px;
+        }
+    }
+
     &_fields {
         display: flex;
         flex-flow: column nowrap;
         gap: 10px;
         width: 35%;
-
-        input {
-
-        }
     }
 
-    &__field-image {
+    &_field-image {
         background: #eee;
         width: 60%;
         height: 360px;

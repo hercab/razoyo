@@ -23,7 +23,7 @@ define([
                         var options = data.items.map(function (item) {
                             return {
                                 id: item.car_id || item.id,
-                                text: `${item.make} > ${item.model}(${item.year})`
+                                text: `${item.make}_${item.model}_${item.year}`
                             };
                         });
                         return {

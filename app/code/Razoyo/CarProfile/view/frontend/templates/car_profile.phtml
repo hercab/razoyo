@@ -7,26 +7,47 @@ $viewModel = $block->getData('viewModel');
 $car = $block->getData('car');
 ?>
 
-<div class="block car-details">
-    <div class="car-card">
-        <img src="<?php echo $car->getImage(); ?>" alt="Car Image" class="car-image"/>
-        <ul class="car-info">
-            <li><strong>Car ID:</strong> <?= $car->getCarId(); ?></li>
-            <li><strong>Year:</strong> <?= $car->getYear(); ?></li>
-            <li><strong>Make:</strong> <?= $car->getMake(); ?></li>
-            <li><strong>Model:</strong> <?= $car->getModel(); ?></li>
-            <li><strong>Price:</strong> $<?= $car->getPrice('price') ?></li>
-            <li><strong>Seats:</strong> <?= $car->getSeats(); ?></li>
-            <li><strong>MPG:</strong> <?= $car->getMpg(); ?> miles per gallon</li>
-        </ul>
-    </div>
-    <div class="car-actions box-actions">
-        <a href="<?= $block->getUrl('car/profile/edit', ['car_id' => $car->getCarId()]) ?>" class="action edit">
-            <?= __("Edit") ?>
-        </a>
-        <a href="<?= $block->getUrl('car/profile/delete', ['car_id' => $car->getCarId()]) ?>"
-           class="action delete">
-            <?= __("Delete") ?>
-        </a>
+<div class="block car-profile_container">
+    <div class="car-profile">
+        <div class="car-profile_fields">
+            <table>
+                <tr>
+                    <td><?= __("Make") ?></td>
+                    <td><?= $car->getMake() ?></td>
+                </tr>
+                <tr>
+                    <td><?= __("Model") ?></td>
+                    <td><?= $car->getModel() ?></td>
+                </tr>
+                <tr>
+                    <td><?= __("Year") ?></td>
+                    <td><?= $car->getYear() ?></td>
+                </tr>
+                <tr>
+                    <td><?= __("Seats") ?></td>
+                    <td><?= $car->getSeats() ?></td>
+                </tr>
+                <tr>
+                    <td><?= __("Mpg") ?></td>
+                    <td><?= $car->getMpg() ?></td>
+                </tr>
+                <tr>
+                    <td><?= __("Price") ?></td>
+                    <td><?= $car->getPrice() ?></td>
+                </tr>
+            </table>
+            <div class="car-profile_actions box-actions">
+                <a href="<?= $block->getUrl('car/profile/edit', ['car_id' => $car->getCarId()]) ?>" class="action edit">
+                    <?= __("Edit") ?>
+                </a>
+                <a href="<?= $block->getUrl('car/profile/delete', ['car_id' => $car->getCarId()]) ?>"
+                   class="action delete">
+                    <?= __("Delete") ?>
+                </a>
+            </div>
+        </div>
+        <div class="car-profile_field-image">
+            <img src="<?php echo $car->getImage(); ?>" alt="Car Image" class="car-image"/>
+        </div>
     </div>
 </div>

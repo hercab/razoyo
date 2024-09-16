@@ -4,16 +4,16 @@
     <!--/ko-->
 </section>
 <form id="car-profile_form" data-bind="submit: saveCarProfile, mageInit: {'validation': {}}">
-    <div class="select-example">
-        <select id="car_select" name="car_id"
-                data-validate="{required: true}"
-                data-bind="mageInit: {'Razoyo_CarProfile/js/model/carSelect': {'url': getServiceUrl()}}">
-            <option></option>
-        </select>
-    </div>
     <div class="car-profile">
         <div class="car-profile_fields">
-            <div class="car-profile__field">
+            <div class="car-profile_field car_select_container">
+                <select id="car_select" name="car_id"
+                        data-validate="{required: true}"
+                        data-bind="mageInit: {'Razoyo_CarProfile/js/model/carSelect': {'url': getServiceUrl()}}">
+                    <option></option>
+                </select>
+            </div>
+            <div class="car-profile_field">
                 <label for="car_make" data-bind="i18n: 'Make'"></label>
                 <input type="text" data-bind="value: getCarData('make')" id="car_make" name="make" readonly>
             </div>
@@ -21,29 +21,29 @@
                 <label for="car_model" data-bind="i18n: 'Model'"></label>
                 <input type="text" id="car_model" data-bind="value: getCarData('model')" name="model" readonly>
             </div>
-            <div class="car-profile__field">
+            <div class="car-profile_field">
                 <label for="car_year" data-bind="i18n: 'Year'"></label>
                 <input type="text" id="car_year" data-bind="value: getCarData('year')" name="year" readonly>
             </div>
-            <div class="car-profile__field">
+            <div class="car-profile_field">
                 <label for="car_price" data-bind="i18n: 'Price'"></label>
                 <input type="text" id="car_price" data-bind="value: getCarData('price')" name="price" readonly>
             </div>
-            <div class="car-profile__field">
+            <div class="car-profile_field">
                 <label for="car_seats" data-bind="i18n: 'Seats'"></label>
                 <input type="text" id="car_seats" data-bind="value: getCarData('seats')" name="seats" readonly>
             </div>
-            <div class="car-profile__field">
+            <div class="car-profile_field">
                 <label for="car_mpg" data-bind="i18n: 'Mgp'"></label>
                 <input type="text" id="car_mpg" data-bind="value: getCarData('mpg')" name="mpg" readonly>
             </div>
+            <div class="car-profile_actions">
+                <button type="submit" data-bind="i18n: 'Save'"></button>
+            </div>
         </div>
-        <div class="car-profile__field-image">
+        <div class="car-profile_field-image">
             <input type="hidden" id="car_image" data-bind="value: getCarData('image')" name="image" readonly>
             <img data-bind="attr: {'src': getCarData('image'), alt: getCarData('model')}"/>
         </div>
-    </div>
-    <div class="car-profile__actions">
-        <button type="submit" data-bind="i18n: 'Save'"></button>
     </div>
 </form>
