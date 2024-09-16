@@ -103,8 +103,13 @@ class ApiCars
             );
         } catch (GuzzleException $exception) {
             $this->logger->error($exception->getMessage());
-            throw new LocalizedException(__('An error occurred while processing your request.'));
+            if ($exception->getCode() === 401 || $exception->getCode() === 403) {
+                throw new LocalizedException(__('You are not authorized to access this resource. Try again'));
+            } else {
+                throw new LocalizedException(__('An error occurred while processing your request.'));
+            }
         }
+
         return $response;
     }
 }

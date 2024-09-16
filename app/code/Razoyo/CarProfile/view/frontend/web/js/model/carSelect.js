@@ -46,6 +46,7 @@ define([
                     url, false
                 ).done(function (response) {
                     carModel.setData(response);
+                    messageList.addSuccessMessage({message: 'Car details loaded successfully'});
                 }).fail(function (response) {
                     messageList.addErrorMessage({message: response.responseJSON.message});
                 });
